@@ -1,0 +1,16 @@
+spring:
+ cloud:
+  stream:
+   kafka:
+    binder:
+     brokers: keycloak.graeshoppe.divisotech.com:9092
+   bindings:
+    registration:
+     destination: EmployeeRegistrationTopic
+     contentType: application/json
+    messages-in:
+     destination: SaleTopic
+     contentType: application/json
+    message-out:
+     destination: employeestatus
+     contentType: application/json  
