@@ -5,18 +5,15 @@ spring:
     binder:
      brokers: keycloak.graeshoppe.divisotech.com:9092
    bindings:
-    productoutput:
-     destination: ProductTopic
+    productCreation:
+     destination: ProductCreation
      contentType: application/json
-    saleoutput:
-     destination: SaleTopic
+    saleEvent:
+     destination: SaleEventTopic
      contentType: application/json  
-    registrationoutput:
-     destination: RegistrationTopic
-     contentType: application/json
-    paymentoutput:
-     destination: PaymentTopic
+    customerRegistration:
+     destination: CustomerRegistrationTopic
      contentType: application/json	
-    customerInput:
-     destination: RegistrationStatusTopic
+    employeeRegistration:
+     destination: EmployeeRegistrationTopic
      contentType: application/json

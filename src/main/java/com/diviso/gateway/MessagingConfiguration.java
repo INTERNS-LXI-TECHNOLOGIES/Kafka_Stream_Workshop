@@ -1,7 +1,6 @@
 package com.diviso.gateway;
 
 import org.springframework.cloud.stream.annotation.EnableBinding;
-import org.springframework.cloud.stream.messaging.Source;
 
 /**
  * Configures Spring Cloud Stream support.

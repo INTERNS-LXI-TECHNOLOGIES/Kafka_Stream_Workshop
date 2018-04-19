@@ -32,6 +32,11 @@ public class Customer {
 	public void setId(long id) {
 		this.id = id;
 	}
+	@Override
+	public String toString() {
+		return "Customer [id=" + id + ", name=" + name + ", contactNumber=" + contactNumber + ", loyaltyPoint="
+				+ loyaltyPoint + "]";
+	}
 	
 
 	

@@ -1,15 +1,17 @@
 package com.diviso.gateway.web.rest;
 
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.diviso.gateway.domain.Product;
+import com.diviso.gateway.domain.Customer;
+import com.diviso.gateway.service.CustomerService;
 
-import com.diviso.gateway.service.ProductService;
 
 
 /**
@@ -17,14 +19,14 @@ import com.diviso.gateway.service.ProductService;
  */
 @RestController
 @RequestMapping("/api")
-public class ProductResource {
+public class CustomerResource {
 
-	private final Logger log = LoggerFactory.getLogger(CustomerResource.class);
+    private final Logger log = LoggerFactory.getLogger(CustomerResource.class);
 
-	ProductService productService;
+    CustomerService customerService;
     
-    public ProductResource(ProductService productService) {
-    	this.productService=productService;
+    public CustomerResource(CustomerService customerService) {
+    	this.customerService=customerService;
 	}
     /**
      * GET  /authenticate : check if the user is authenticated, and return its login.
@@ -32,12 +34,13 @@ public class ProductResource {
      * @param request the HTTP request
      * @return the login if the user is authenticated
      */
-    @PostMapping("/product")
-    public boolean createProduct(@RequestBody Product product) {
+    @PostMapping("/customer")
+    public boolean registerCustomer(@RequestBody Customer customer) {
     	
-        log.info("REST request to  Create Product : {}",product.getName());
-        return productService.send(product);
+        log.info("REST request to  Create Customer : {}",customer.getName());
+        return customerService.send(customer);
+        
         
     }
-	
+
 }

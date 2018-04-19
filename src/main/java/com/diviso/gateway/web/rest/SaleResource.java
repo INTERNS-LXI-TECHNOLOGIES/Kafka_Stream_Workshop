@@ -31,7 +31,7 @@ public class SaleResource {
 	 public boolean salePublish(@RequestBody Sale sale) {
 		log.debug("REST request to create sale event by sale"+sale);
 		
-		return saleService.sale(sale); 		
+		return saleService.send(sale); 		
 	 }
 
 }

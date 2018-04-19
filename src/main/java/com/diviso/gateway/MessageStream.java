@@ -5,28 +5,26 @@ import org.springframework.messaging.MessageChannel;
 
 public interface MessageStream {
 
-	String PRODUCTOUTPUT="productoutput";
+	String PRODUCTCREATION="productCreation";
 	
-	String SALEOUTPUT="saleoutput";
+	String SALEEVENTTOPIC="saleEvent";
 	
-	String REGISTRATIONOUTPUT="registrationoutput";
+	String CUSTOMERREGISTRATIONTOPIC="cutomerRegistration";
 	
-	String PAYMENTOUTPUT="paymentoutput";
-	
-	String CUSTOMERINPUT="customerInput";
+	String EMPLOYEEREGISTRATIONTOPIC="employeeRegistration";
 	
 	
-	@Output(PRODUCTOUTPUT)
-	MessageChannel getProductOutputStream();
+	@Output(PRODUCTCREATION)
+	MessageChannel getProductCreation();
 	
-	@Output(SALEOUTPUT)
-	MessageChannel getSaleOutputStream();
+	@Output(SALEEVENTTOPIC)
+	MessageChannel getSaleEventTopic();
 	
-	@Output(REGISTRATIONOUTPUT)
-	MessageChannel getRegistrationOutputStream();
+	@Output(CUSTOMERREGISTRATIONTOPIC)
+	MessageChannel getCustomerRegistrationTopic();
 	
-	@Output(PAYMENTOUTPUT)
-	MessageChannel getPaymentOutputStream();
+	@Output(EMPLOYEEREGISTRATIONTOPIC)
+	MessageChannel getEmployeeRegistration();
 	
 	
 }
