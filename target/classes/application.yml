@@ -1,0 +1,13 @@
+spring:
+ cloud:
+  stream:
+   kafka:
+    binder:
+     brokers: keycloak.graeshoppe.divisotech.com:9092
+   bindings:
+    payment-in:
+     destination: SaleEventTopic
+     contentType: application/json
+    payment-out:
+     destination: PaymentTopic
+     contentType: application/json
