@@ -1,0 +1,21 @@
+spring:
+ cloud:
+  stream:
+   kafka:
+    binder:
+     brokers: keycloak.graeshoppe.divisotech.com:9092
+   bindings:
+    messages-in:
+     destination: ProductCreation
+     contentType: application/json
+    messages-out:
+     destination: ProductTopic
+     contentType: application/json
+    sales-in:
+     destination: SaleEventTopic
+     contentType: application/json
+    sales-out:
+     destination: SaleTopic
+     contentType: application/json
+server:
+  port: 8071
